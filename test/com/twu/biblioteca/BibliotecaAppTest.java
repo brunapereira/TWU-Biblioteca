@@ -1,7 +1,7 @@
 package com.twu.biblioteca;
 
-import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.*;
 
@@ -10,14 +10,17 @@ import static org.junit.Assert.*;
  */
 public class BibliotecaAppTest {
 
+    BibliotecaApp biblioteca;
+
     @Before
     public void setUp() throws Exception {
+        biblioteca = new BibliotecaApp();
+    }
+
+    @Test
+    public void test() throws Exception {
         
-
     }
 
-    @After
-    public void tearDown() throws Exception {
 
-    }
 }
