@@ -8,7 +8,7 @@ public class BibliotecaApp {
     private void welcomeMessage(){
         System.out.println("Hi! Welcome to the biblioteca from TWU 46!");
         System.out.println("Here you can check-out any available book.");
-        System.out.println("I suggest you to check all the book we hava availabe by choosing option 1. Try it out!\n");
+        System.out.println("I suggest you to check all the book we have available by choosing option 1. Try it out!\n");
     }
 
     private void menu(){
