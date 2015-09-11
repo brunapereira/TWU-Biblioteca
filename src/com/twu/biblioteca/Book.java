@@ -16,4 +16,20 @@ public class Book {
         this.author = author;
         this.year = year;
     }
+
+    public boolean getAvailability(){
+        return this.availability;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public String getAuthor(){
+        return this.author;
+    }
+
+    public String getYear(){
+        return this.year;
+    }
 }
