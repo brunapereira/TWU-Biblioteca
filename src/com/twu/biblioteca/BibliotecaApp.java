@@ -17,13 +17,14 @@ public class BibliotecaApp {
         System.out.println("I suggest you to check all the book we have available by choosing option 1. Try it out!\n");
     }
 
-    private void menu(){
+    private void menu() throws Exception {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Choose an option:");
         System.out.println(
                 "1- List books\n" +
-                "2- Finish"
+                "2- Check out\n" +
+                "3- Quit"
         );
 
         int selection = input.nextInt();
@@ -32,17 +33,33 @@ public class BibliotecaApp {
         chooseAction(selection);
     }
 
-    private void chooseAction(int option){
+    private void chooseAction(int option) throws Exception {
         switch (option) {
             case 1:
                 System.out.println("So far, these are the books we have available in our library. \n");
                 listBooks();
                 break;
             case 2:
+                System.out.println("What book do you want?");
+                listBooks();
+                System.out.println("I felt free to show you the available books again :)");
+                Scanner scan= new Scanner(System.in);
+                String bookToCheckOut = scan.nextLine();
+                findBook(bookToCheckOut);
+                break;
+            case 3:
                 quit();
             default:
                 System.out.println("Invalid Option");
                 break;
+        }
+    }
+
+    private void findBook(String bookToCheckOut) throws Exception {
+        for (Book book : this.books) {
+            if (book.getName().toLowerCase().equals(bookToCheckOut.toLowerCase())) {
+                book.rent();
+            }
         }
     }
 
@@ -65,7 +82,7 @@ public class BibliotecaApp {
         books.add(new Book(false, "Javascript Best Parts", "Junior", "2003"));
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         ArrayList<Book> books = new ArrayList<Book>();
         BibliotecaApp biblioteca = new BibliotecaApp(books);
         biblioteca.addBooks();
