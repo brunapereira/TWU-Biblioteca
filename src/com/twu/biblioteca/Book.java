@@ -40,4 +40,8 @@ public class Book {
     public void rent(){
         this.setAvailability(false);
     }
+
+    public void turnBack(){
+        this.setAvailability(true);
+    }
 }
