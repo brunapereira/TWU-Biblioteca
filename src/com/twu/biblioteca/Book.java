@@ -52,7 +52,7 @@ public class Book {
         return result;
     }
 
-    public String turnBack() throws Exception {
+    public String giveBack() throws Exception {
         String result;
         if (!this.getAvailability()) {
             this.setAvailability(true);

@@ -66,7 +66,7 @@ public class BibliotecaApp {
         for (Book book : this.books) {
             if (book.getName().toLowerCase().equals(bookTo.toLowerCase())) {
                 if (option.equals("checkOut")) { book.rent(); }
-                if (option.equals("giveBack")) { book.turnBack(); }
+                if (option.equals("giveBack")) { book.giveBack(); }
             }
         }
     }

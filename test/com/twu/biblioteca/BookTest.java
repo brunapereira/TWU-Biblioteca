@@ -46,7 +46,7 @@ public class BookTest {
     @Test
     public void bookIsAvailableWhenReturned() throws Exception {
         book.setAvailability(false);
-        book.turnBack();
+        book.giveBack();
         assertEquals(book.getAvailability(), true);
     }
 
@@ -59,7 +59,7 @@ public class BookTest {
     @Test
      public void bookCantBeReturnedIfAvailabilityIsTrue() throws Exception {
         book.setAvailability(true);
-        assertEquals("This book is already here!", book.turnBack());
+        assertEquals("This book is already here!", book.giveBack());
     }
 
 }
