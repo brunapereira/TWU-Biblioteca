@@ -40,12 +40,21 @@ public class Book {
     }
 
     public void rent() throws Exception {
-        if (this.getAvailability()) { this.setAvailability(false); }
-        else { throw new Exception("Book Already Rented!"); }
+        if (this.getAvailability()) {
+            this.setAvailability(false);
+            System.out.println("Thank You! Enjoy the Book!");
+        }
+        else {
+            throw new Exception("Book Already Rented!");
+        }
+
     }
 
     public void turnBack() throws Exception {
-        if (!this.getAvailability()) { this.setAvailability(true); }
+        if (!this.getAvailability()) {
+            this.setAvailability(true);
+            System.out.println("Thank you for returning the book!");
+        }
         else { throw new Exception("This book is already here!"); }
     }
 
