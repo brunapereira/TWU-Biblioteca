@@ -1,12 +1,18 @@
 package com.twu.biblioteca;
 
-import java.io.ByteArrayInputStream;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BibliotecaApp {
 
+    private ArrayList<Book> books;
+
+    public BibliotecaApp(ArrayList<Book> books) {
+        this.books = books;
+    }
+
     private void welcomeMessage(){
-        System.out.println("Hi! Welcome to the biblioteca from TWU 46!");
+        System.out.println("Hi! Welcome to biblioteca from TWU 46!");
         System.out.println("Here you can check-out any available book.");
         System.out.println("I suggest you to check all the book we have available by choosing option 1. Try it out!\n");
     }
@@ -29,7 +35,8 @@ public class BibliotecaApp {
     private void chooseAction(int option){
         switch (option) {
             case 1:
-                System.out.println("You choose 1");
+                System.out.println("So far, these are the books we have available in our library. \n");
+                listBooks();
                 break;
             case 2:
                 System.out.println("Até a próxima!");
@@ -40,8 +47,22 @@ public class BibliotecaApp {
         }
     }
 
+    private void listBooks() {
+        for (Book book : books) {
+            book.print();
+        }
+    }
+
+    private void addBooks() {
+        books.add(new Book(true, "Alice in Wonderland", "Bruna", "1992"));
+        books.add(new Book(true, "Ruby the Right Way", "Julia", "1999"));
+        books.add(new Book(true, "Java Best Parts", "Fernanda", "2003"));
+    }
+
     public static void main(String[] args) {
-        BibliotecaApp biblioteca = new BibliotecaApp();
+        ArrayList<Book> books = new ArrayList<Book>();
+        BibliotecaApp biblioteca = new BibliotecaApp(books);
+        biblioteca.addBooks();
 
         biblioteca.welcomeMessage();
         while(true) {
