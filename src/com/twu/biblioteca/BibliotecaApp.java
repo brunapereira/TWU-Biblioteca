@@ -39,8 +39,7 @@ public class BibliotecaApp {
                 listBooks();
                 break;
             case 2:
-                System.out.println("Até a próxima!");
-                System.exit(1);
+                quit();
             default:
                 System.out.println("Invalid Option");
                 break;
@@ -49,14 +48,20 @@ public class BibliotecaApp {
 
     private void listBooks() {
         for (Book book : books) {
-            book.print();
+            if (book.getAvailability())
+                book.print();
         }
+    }
+
+    private void quit() {
+        System.exit(1);
     }
 
     private void addBooks() {
         books.add(new Book(true, "Alice in Wonderland", "Bruna", "1992"));
         books.add(new Book(true, "Ruby the Right Way", "Julia", "1999"));
         books.add(new Book(true, "Java Best Parts", "Fernanda", "2003"));
+        books.add(new Book(false, "Javascript Best Parts", "Junior", "2003"));
     }
 
     public static void main(String[] args) {
