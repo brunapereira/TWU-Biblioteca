@@ -39,15 +39,17 @@ public class Book {
         this.availability = a;
     }
 
-    public void rent() throws Exception {
+    public String rent() throws Exception {
+        String result;
         if (this.getAvailability()) {
             this.setAvailability(false);
-            System.out.println("Thank You! Enjoy the Book!");
+            result = "Thank you! Enjoy the book";
         }
         else {
-            throw new Exception("Book Already Rented!");
+            result = "Book Already Rented!";
         }
-
+        System.out.println(result);
+        return result;
     }
 
     public void turnBack() throws Exception {

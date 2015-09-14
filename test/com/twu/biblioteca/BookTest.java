@@ -55,10 +55,11 @@ public class BookTest {
         book.setAvailability(false);
         book.rent();
     }
-     @Test(expected = java.lang.Exception.class)
-        public void bookCantBeReturnedIfAvailabilityIsTrue() throws Exception {
-            book.setAvailability(true);
-            book.turnBack();
-        }
+
+    @Test(expected = java.lang.Exception.class)
+     public void bookCantBeReturnedIfAvailabilityIsTrue() throws Exception {
+        book.setAvailability(true);
+        book.turnBack();
+    }
 
 }
