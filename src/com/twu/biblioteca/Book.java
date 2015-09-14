@@ -45,19 +45,24 @@ public class Book {
             this.setAvailability(false);
             result = "Thank you! Enjoy the book";
         }
-        else {
+        else
             result = "Book Already Rented!";
-        }
+
         System.out.println(result);
         return result;
     }
 
-    public void turnBack() throws Exception {
+    public String turnBack() throws Exception {
+        String result;
         if (!this.getAvailability()) {
             this.setAvailability(true);
-            System.out.println("Thank you for returning the book!");
+            result = "Thank you for returning the book!";
         }
-        else { throw new Exception("This book is already here!"); }
+        else
+            result = "This book is already here!";
+
+        System.out.println(result);
+        return result;
     }
 
     public void print() {

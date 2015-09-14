@@ -50,16 +50,16 @@ public class BookTest {
         assertEquals(book.getAvailability(), true);
     }
 
-    @Test(expected = java.lang.Exception.class)
+    @Test
     public void bookCantBeRentedIfAvailabilityIsFalse() throws Exception {
         book.setAvailability(false);
-        book.rent();
+        assertEquals("Book Already Rented!", book.rent());
     }
 
-    @Test(expected = java.lang.Exception.class)
+    @Test
      public void bookCantBeReturnedIfAvailabilityIsTrue() throws Exception {
         book.setAvailability(true);
-        book.turnBack();
+        assertEquals("This book is already here!", book.turnBack());
     }
 
 }
