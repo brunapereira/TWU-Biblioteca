@@ -45,6 +45,7 @@ public class BookTest {
 
     @Test
     public void bookIsAvailableWhenReturned() throws Exception {
+        book.setAvailability(false);
         book.turnBack();
         assertEquals(book.getAvailability(), true);
     }

@@ -20,11 +20,12 @@ public class BibliotecaApp {
     private void menu() throws Exception {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Choose an option:");
+        System.out.println("\nChoose an option:");
         System.out.println(
                 "1- List books\n" +
                 "2- Check out\n" +
-                "3- Quit"
+                "3- Give back\n" +
+                "4- Quit"
         );
 
         int selection = input.nextInt();
@@ -43,11 +44,17 @@ public class BibliotecaApp {
                 System.out.println("What book do you want?");
                 listBooks();
                 System.out.println("I felt free to show you the available books again :)");
-                Scanner scan= new Scanner(System.in);
+                Scanner scan = new Scanner(System.in);
                 String bookToCheckOut = scan.nextLine();
-                findBook(bookToCheckOut);
+                findBook(bookToCheckOut, "checkOut");
                 break;
             case 3:
+                System.out.println("What book will you give back?");
+                Scanner scan2 = new Scanner(System.in);
+                String bookToGiveBack = scan2.nextLine();
+                findBook(bookToGiveBack, "giveBack");
+                break;
+            case 4:
                 quit();
             default:
                 System.out.println("Invalid Option");
@@ -55,10 +62,11 @@ public class BibliotecaApp {
         }
     }
 
-    private void findBook(String bookToCheckOut) throws Exception {
+    private void findBook(String bookTo, String option) throws Exception {
         for (Book book : this.books) {
-            if (book.getName().toLowerCase().equals(bookToCheckOut.toLowerCase())) {
-                book.rent();
+            if (book.getName().toLowerCase().equals(bookTo.toLowerCase())) {
+                if (option.equals("checkOut")) { book.rent(); }
+                if (option.equals("giveBack")) { book.turnBack(); }
             }
         }
     }
