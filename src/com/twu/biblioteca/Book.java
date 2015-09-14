@@ -46,4 +46,10 @@ public class Book {
         if (!this.getAvailability()) { this.setAvailability(true); }
         else { throw new Exception("This book is already here!"); }
     }
+
+    public void print() {
+        System.out.print("Book Name: " + this.getName() + " ~~  ");
+        System.out.print("Author: " + this.getAuthor() + " ~~  ");
+        System.out.println("Year: " + this.getYear());
+    }
 }
