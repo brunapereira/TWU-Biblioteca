@@ -36,5 +36,11 @@ public class BookTest {
     public void bookYearIs1992() throws Exception {
         assertEquals(book.getYear(), "1994");
     }
-    
+
+    @Test
+    public void bookIsUnavailableWhenRented() throws Exception {
+        book.rent();
+        assertEquals(book.getAvailability(), false);
+    }
+
 }

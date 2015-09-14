@@ -32,4 +32,12 @@ public class Book {
     public String getYear(){
         return this.year;
     }
+
+    public void setAvailability(boolean a){
+        this.availability = false;
+    }
+
+    public void rent(){
+        this.setAvailability(false);
+    }
 }
