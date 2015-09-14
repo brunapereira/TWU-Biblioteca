@@ -42,7 +42,8 @@ public class Book {
         else { throw new Exception("Book Already Rented!"); }
     }
 
-    public void turnBack(){
-        this.setAvailability(true);
+    public void turnBack() throws Exception{
+        if (!this.getAvailability()) { this.setAvailability(true); }
+        else { throw new Exception("This book is already here!"); }
     }
 }
