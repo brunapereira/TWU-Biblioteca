@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import static java.lang.String.*;
+
 /**
  * Created by bpereira on 9/11/15.
  */
@@ -48,8 +50,6 @@ public class Book {
     }
 
     public void print() {
-        System.out.print("Book Name: " + this.getName() + " ~~  ");
-        System.out.print("Author: " + this.getAuthor() + " ~~  ");
-        System.out.println("Year: " + this.getYear());
+        System.out.println(format("%-40s%-40s%-4s", this.getName(), this.getAuthor(), this.getYear()));
     }
 }

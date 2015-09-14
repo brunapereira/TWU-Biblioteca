@@ -47,6 +47,7 @@ public class BibliotecaApp {
     }
 
     private void listBooks() {
+        System.out.println(String.format("%-40s%-40s%-4s", "Book Name", "Author", "Year"));
         for (Book book : books) {
             if (book.getAvailability())
                 book.print();
