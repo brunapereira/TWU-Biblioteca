@@ -34,7 +34,7 @@ public class BookTest {
 
     @Test
     public void bookYearIs1992() throws Exception {
-        assertEquals(book.getYear(), "1994");
+        assertEquals(book.getYear(), "1992");
     }
 
     @Test
@@ -47,6 +47,12 @@ public class BookTest {
     public void bookIsAvailableWhenReturned() throws Exception {
         book.turnBack();
         assertEquals(book.getAvailability(), true);
+    }
+
+    @Test(expected = java.lang.Exception.class)
+    public void bookCantBeRentedIfAvailabilityIsFalse() throws Exception {
+        book.setAvailability(false);
+        book.rent();
     }
 
 }

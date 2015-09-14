@@ -37,8 +37,9 @@ public class Book {
         this.availability = false;
     }
 
-    public void rent(){
-        this.setAvailability(false);
+    public void rent() throws Exception {
+        if (this.getAvailability()) { this.setAvailability(false); }
+        else { throw new Exception("Book Already Rented!"); }
     }
 
     public void turnBack(){
