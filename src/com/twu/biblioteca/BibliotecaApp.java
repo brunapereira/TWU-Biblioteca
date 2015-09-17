@@ -10,7 +10,7 @@ public class BibliotecaApp {
 
         biblioteca.welcomeMessage();
         while(true) {
-            biblioteca.menu();
+            biblioteca.showMenu();
         }
     }
 }
