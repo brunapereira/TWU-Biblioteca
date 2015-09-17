@@ -6,9 +6,7 @@ import java.util.Scanner;
 public class BibliotecaApp {
 
     public static void main(String[] args) throws Exception {
-        ArrayList<Book> books = new ArrayList<Book>();
-        Biblioteca biblioteca = new Biblioteca(books);
-        biblioteca.addBooks();
+        Biblioteca biblioteca = new Biblioteca();
 
         biblioteca.welcomeMessage();
         while(true) {

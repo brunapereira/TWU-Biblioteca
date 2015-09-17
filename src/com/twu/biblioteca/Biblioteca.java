@@ -7,10 +7,10 @@ import java.util.Scanner;
  * Created by bpereira on 9/17/15.
  */
 public class Biblioteca {
-    private ArrayList<Book> books;
+    private ArrayList<Book> books = new ArrayList<Book>();
 
-    public Biblioteca(ArrayList<Book> books) {
-        this.books = books;
+    public Biblioteca() {
+        this.addBooks();
     }
 
     public void welcomeMessage(){
@@ -85,7 +85,7 @@ public class Biblioteca {
         System.exit(1);
     }
 
-    public void addBooks() {
+    private void addBooks() {
         books.add(new Book(true, "Alice in Wonderland", "Bruna", "1992"));
         books.add(new Book(true, "Ruby the Right Way", "Julia", "1999"));
         books.add(new Book(true, "Java Best Parts", "Fernanda", "2003"));
