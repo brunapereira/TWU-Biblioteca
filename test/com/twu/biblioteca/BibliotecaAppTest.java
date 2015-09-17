@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class BibliotecaAppTest {
 
-    BibliotecaApp biblioteca;
+    Biblioteca biblioteca;
 
     @Before
     public void setUp() throws Exception {
@@ -18,7 +18,7 @@ public class BibliotecaAppTest {
         books.add(new Book(true, "Book 1", "Bruna", "1992"));
         books.add(new Book(true, "Book 2", "Julia", "1999"));
         books.add(new Book(true, "Book 2", "Fernanda", "2003"));
-        biblioteca = new BibliotecaApp(books);
+        biblioteca = new Biblioteca(books);
     }
 
     @Test
