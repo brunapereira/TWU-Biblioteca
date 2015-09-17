@@ -14,11 +14,6 @@ public class BibliotecaAppTest {
 
     @Before
     public void setUp() throws Exception {
-        ArrayList<Book> books = new ArrayList<Book>();
-        books.add(new Book(true, "Book 1", "Bruna", "1992"));
-        books.add(new Book(true, "Book 2", "Julia", "1999"));
-        books.add(new Book(true, "Book 2", "Fernanda", "2003"));
-        biblioteca = new Biblioteca(books);
     }
 
     @Test
