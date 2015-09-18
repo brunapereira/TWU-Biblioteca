@@ -9,8 +9,10 @@ public class BibliotecaApp {
         Biblioteca biblioteca = new Biblioteca();
 
         biblioteca.welcomeMessage();
-        while(true) {
-            biblioteca.showMenu();
-        }
+
+        if (biblioteca.logIn()){
+            while(true) {
+                biblioteca.showMenu();
+            }
     }
 }
