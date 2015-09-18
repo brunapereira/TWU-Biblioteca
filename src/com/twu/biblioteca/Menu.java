@@ -1,11 +1,17 @@
 package com.twu.biblioteca;
 
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by bpereira on 9/17/15.
  */
 public class Menu {
+
+    Map<String, Integer> options = new TreeMap<String, Integer>();
+
+    public Menu() {
+        this.createOptions();
+    }
 
     public void run(Biblioteca biblioteca) throws Exception {
         show();
@@ -14,12 +20,22 @@ public class Menu {
 
     private void show(){
         System.out.println("\nChoose an option:");
-        System.out.println(
-                        "1- List books\n" +
-                        "2- Check out\n" +
-                        "3- Give back\n" +
-                        "4- Quit"
-        );
+//        System.out.println(
+//                options.get("List books") + "- List books\n" +
+//                options.get("List movies") + "- List movies\n" +
+//                options.get("Check out book") + "- Check out book\n" +
+//                options.get("Check out movie") + "- Check out movie\n" +
+//                options.get("Give back book") + "- Give back book\n" +
+//                options.get("Give back movie") + "- Give back movie\n" +
+//                options.get("Quit") + "- Quit\n"
+//
+//        );
+
+        for (String key : options.keySet()) {
+            Integer value = options.get(key);
+            System.out.println(value + " - " + key);
+        }
+
     }
 
     private void chooseAction(int option, Biblioteca biblioteca) throws Exception {
@@ -59,5 +75,15 @@ public class Menu {
         Scanner scan = new Scanner(System.in);
         String book = scan.nextLine();
         return book;
+    }
+
+    private void createOptions(){
+        options.put("Check out book", 1);
+        options.put("Check out movie", 2);
+        options.put("Give back book", 3);
+        options.put("Give back movie", 4);
+        options.put("List books", 5);
+        options.put("List movies", 6);
+        options.put("Quit", 7);
     }
 }

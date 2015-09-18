@@ -20,7 +20,7 @@ public class Biblioteca {
     public void welcomeMessage(){
         System.out.println("Hi! Welcome to biblioteca from TWU 46!");
         System.out.println("Here you can check-out any available book.");
-        System.out.println("I suggest you to check all the book we have available by choosing option 1. Try it out!\n");
+        System.out.println("I suggest you to check all the books and movies we have available by choosing option 1. Try it out!\n");
     }
 
     public void showMenu() throws Exception {
