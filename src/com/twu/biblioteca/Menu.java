@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class Menu {
 
-    Map<String, Integer> options = new TreeMap<String, Integer>();
+    private static final Map<String, Integer> options = new TreeMap<String, Integer>();
 
     public Menu() {
         this.createOptions();
@@ -21,6 +21,7 @@ public class Menu {
     private void show(){
         System.out.println("\nChoose an option:");
 
+
         for (String key : options.keySet()) {
             Integer value = options.get(key);
             System.out.println(value + " - " + key);
@@ -31,18 +32,30 @@ public class Menu {
     private void chooseAction(int option, Biblioteca biblioteca) throws Exception {
         switch (option) {
             case 1:
-                System.out.println("So far, these are the books we have available in our library. \n");
-                biblioteca.listBooks();
-                break;
-            case 2:
                 System.out.println("What book do you want?");
                 biblioteca.findBook(bookFromKeyboard(), "checkOut");
+                break;
+            case 2:
+                System.out.println("What movie do you want?");
+                biblioteca.findBook(movieFromKeyboard(), "checkOut");
                 break;
             case 3:
                 System.out.println("What book will you give back?");
                 biblioteca.findBook(bookFromKeyboard(), "giveBack");
                 break;
             case 4:
+                System.out.println("What movie will you give back?");
+                biblioteca.findBook(movieFromKeyboard(), "giveBack");
+                break;
+            case 5:
+                System.out.println("So far, these are the books we have available in our library. \n");
+                biblioteca.listBooks();
+                break;
+            case 6:
+                System.out.println("So far, these are the movies we have available in our library. \n");
+                biblioteca.listMovies();
+                break;
+            case 7:
                 quit();
             default:
                 System.out.println("Invalid Option");
@@ -75,5 +88,6 @@ public class Menu {
         options.put("List books", 5);
         options.put("List movies", 6);
         options.put("Quit", 7);
+
     }
 }
