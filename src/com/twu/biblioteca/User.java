@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import static java.lang.String.format;
+
 /**
  * Created by bpereira on 9/18/15.
  */
@@ -38,4 +40,5 @@ public class User {
     public String getPhoneNumber() {
         return phoneNumber;
     }
+
 }

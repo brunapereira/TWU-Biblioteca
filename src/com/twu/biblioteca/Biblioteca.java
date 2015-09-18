@@ -32,15 +32,22 @@ public class Biblioteca {
 
     public boolean logIn(){
         Scanner scan = new Scanner(System.in);
+        System.out.print("Login:");
         String login = scan.nextLine();
+        System.out.print("\nSenha:");
         String password = scan.nextLine();
 
-
+        return authenticateUser(login, password);
     }
 
     public void showMenu() throws Exception {
         menu.run(this);
     }
+
+    public void showLoginError() throws Exception {
+        System.out.println("Wrong user or password!");
+    }
+
 
     public void findBook(String bookTo, String option) throws Exception {
         for (Book book : this.books) {
@@ -74,6 +81,15 @@ public class Biblioteca {
             if (movie.isAvailability())
                 movie.print();
         }
+    }
+
+    private boolean authenticateUser(String login, String password){
+        for (User user : this.users) {
+            if (user.getLibraryNumber().equals(login) && (user.getPassword().equals(password))) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void addBooks() {

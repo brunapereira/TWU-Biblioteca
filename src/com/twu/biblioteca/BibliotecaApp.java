@@ -11,8 +11,10 @@ public class BibliotecaApp {
         biblioteca.welcomeMessage();
 
         if (biblioteca.logIn()){
-            while(true) {
-                biblioteca.showMenu();
-            }
+            while(true) { biblioteca.showMenu(); }
+        } else {
+            biblioteca.showLoginError();
+        }
+
     }
 }

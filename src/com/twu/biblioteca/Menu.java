@@ -56,6 +56,8 @@ public class Menu {
                 biblioteca.listMovies();
                 break;
             case 7:
+                biblioteca.showUserInformations();
+            case 7:
                 quit();
             default:
                 System.out.println("Invalid Option");
@@ -87,13 +89,14 @@ public class Menu {
     }
 
     private void createOptions(){
-        options.put("Check out book", 1);
-        options.put("Check out movie", 2);
-        options.put("Give back book", 3);
-        options.put("Give back movie", 4);
-        options.put("List books", 5);
-        options.put("List movies", 6);
-        options.put("Quit", 7);
+        options.put(" Check out book", 1);
+        options.put(" Check out movie", 2);
+        options.put(" Give back book", 3);
+        options.put(" Give back movie", 4);
+        options.put(" List books", 5);
+        options.put(" List movies", 6);
+        options.put(" User Information", 7);
+        options.put("Quit", 8);
 
     }
 }
