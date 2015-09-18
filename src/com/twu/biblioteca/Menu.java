@@ -20,16 +20,6 @@ public class Menu {
 
     private void show(){
         System.out.println("\nChoose an option:");
-//        System.out.println(
-//                options.get("List books") + "- List books\n" +
-//                options.get("List movies") + "- List movies\n" +
-//                options.get("Check out book") + "- Check out book\n" +
-//                options.get("Check out movie") + "- Check out movie\n" +
-//                options.get("Give back book") + "- Give back book\n" +
-//                options.get("Give back movie") + "- Give back movie\n" +
-//                options.get("Quit") + "- Quit\n"
-//
-//        );
 
         for (String key : options.keySet()) {
             Integer value = options.get(key);
