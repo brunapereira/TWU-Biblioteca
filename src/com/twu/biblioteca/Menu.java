@@ -37,7 +37,7 @@ public class Menu {
                 break;
             case 2:
                 System.out.println("What movie do you want?");
-                biblioteca.findBook(movieFromKeyboard(), "checkOut");
+                biblioteca.findMovie(movieFromKeyboard(), "checkOut");
                 break;
             case 3:
                 System.out.println("What book will you give back?");
@@ -45,7 +45,7 @@ public class Menu {
                 break;
             case 4:
                 System.out.println("What movie will you give back?");
-                biblioteca.findBook(movieFromKeyboard(), "giveBack");
+                biblioteca.findMovie(movieFromKeyboard(), "giveBack");
                 break;
             case 5:
                 System.out.println("So far, these are the books we have available in our library. \n");
@@ -78,6 +78,12 @@ public class Menu {
         Scanner scan = new Scanner(System.in);
         String book = scan.nextLine();
         return book;
+    }
+
+    private String movieFromKeyboard(){
+        Scanner scan = new Scanner(System.in);
+        String movie = scan.nextLine();
+        return movie;
     }
 
     private void createOptions(){

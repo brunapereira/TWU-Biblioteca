@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import static java.lang.String.format;
+
 /**
  * Created by bpereira on 9/18/15.
  */
@@ -66,6 +68,10 @@ public class Movie {
 
         System.out.println(result);
         return result;
+    }
+
+    public void print() {
+        System.out.println(format("%-30s%-10s%-20s%-2s", this.getName(), this.getDirector(), this.getYear(), this.getRating()));
     }
 
 
