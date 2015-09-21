@@ -21,12 +21,10 @@ public class Menu {
     private void show(){
         System.out.println("\nChoose an option:");
 
-
         for (String key : options.keySet()) {
             Integer value = options.get(key);
             System.out.println(value + " - " + key);
         }
-
     }
 
     private void chooseAction(int option, Biblioteca biblioteca) throws Exception {
@@ -57,7 +55,7 @@ public class Menu {
                 break;
             case 7:
                 biblioteca.showUserInformations();
-            case 7:
+            case 8:
                 quit();
             default:
                 System.out.println("Invalid Option");

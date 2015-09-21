@@ -12,6 +12,7 @@ public class Biblioteca {
     private ArrayList<Movie> movies;
     private ArrayList<User> users;
     private Menu menu;
+    private String userLoggedIn;
 
     public Biblioteca() {
         this.books = new ArrayList<Book>();
@@ -21,7 +22,6 @@ public class Biblioteca {
         this.addMovies();
         this.addUsers();
         menu = new Menu();
-
     }
 
     public void welcomeMessage(){
@@ -83,9 +83,19 @@ public class Biblioteca {
         }
     }
 
+    public void showUserInformations(){
+        System.out.println(String.format("%-20s%-20s%-20s%-10s", "Library Number", "Name", "Email", "Phone"));
+        for (User user : this.users) {
+            if (userLoggedIn.equals(user.getLibraryNumber())) {
+                user.print();
+            }
+        }
+    }
+
     private boolean authenticateUser(String login, String password){
         for (User user : this.users) {
             if (user.getLibraryNumber().equals(login) && (user.getPassword().equals(password))) {
+                userLoggedIn = user.getLibraryNumber();
                 return true;
             }
         }
