@@ -19,7 +19,7 @@ public class BookTest {
 
     @Test
     public void availabilityIsTrue() throws Exception {
-        assertEquals(book.getAvailability(), true);
+        assertEquals(book.isAvailability(), true);
     }
 
     @Test
@@ -40,26 +40,26 @@ public class BookTest {
     @Test
     public void bookIsUnavailableWhenRented() throws Exception {
         book.rent();
-        assertEquals(book.getAvailability(), false);
+        assertEquals(book.isAvailability(), false);
     }
 
     @Test
     public void bookIsAvailableWhenReturned() throws Exception {
         book.setAvailability(false);
         book.giveBack();
-        assertEquals(book.getAvailability(), true);
+        assertEquals(book.isAvailability(), true);
     }
 
     @Test
     public void bookCantBeRentedIfAvailabilityIsFalse() throws Exception {
         book.setAvailability(false);
-        assertEquals("Book Already Rented!", book.rent());
+        assertEquals("Already Rented!", book.rent());
     }
 
     @Test
      public void bookCantBeReturnedIfAvailabilityIsTrue() throws Exception {
         book.setAvailability(true);
-        assertEquals("This book is already here!", book.giveBack());
+        assertEquals("It's already here!", book.giveBack());
     }
 
 }

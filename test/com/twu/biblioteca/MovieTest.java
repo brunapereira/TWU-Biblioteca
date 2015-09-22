@@ -58,25 +58,25 @@ public class MovieTest {
     @Test
     public void movieCantBeRentedIfAvailabilityIsFalse() throws Exception {
         movie.setAvailability(false);
-        assertEquals("Movie Already Rented!", movie.rent());
+        assertEquals("Already Rented!", movie.rent());
     }
 
     @Test
     public void movieCantBeReturnedIfAvailabilityIsTrue() throws Exception {
         movie.setAvailability(true);
-        assertEquals("This movie is already here!", movie.giveBack());
+        assertEquals("It's already here!", movie.giveBack());
     }
 
     @Test
     public void movieRentedCorrectly() throws Exception {
         movie.setAvailability(true);
-        assertEquals("Thank you! Enjoy the movie.", movie.rent());
+        assertEquals("Thank you! Enjoy.", movie.rent());
     }
 
     @Test
     public void movieReturnedCorrectly() throws Exception {
         movie.setAvailability(false);
-        assertEquals("Thank you for returning the movie!", movie.giveBack());
+        assertEquals("Thank you for returning!", movie.giveBack());
     }
 
 }

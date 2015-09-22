@@ -25,7 +25,7 @@ public class BibliotecaTest {
     @Test
     public void findBookIsFindingTheRightBook() throws Exception {
         biblioteca.findBook("Alice in Wonderland", "checkOut");
-        assertEquals(books.get(0).getAvailability(), false);
+        assertEquals(books.get(0).isAvailability(), false);
     }
 
 
