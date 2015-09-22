@@ -21,7 +21,8 @@ public class Book extends Product {
         return this.author;
     }
 
-    public void print() {
-        System.out.println(format("%-40s%-40s%-4s", this.getName(), this.getAuthor(), this.getYear()));
+    @Override
+    public String toString() {
+        return format("%-40s%-40s%-4s", this.getName(), this.getAuthor(), this.getYear());
     }
 }

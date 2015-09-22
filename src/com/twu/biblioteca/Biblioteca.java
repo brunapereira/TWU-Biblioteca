@@ -24,9 +24,9 @@ public class Biblioteca {
         menu = new Menu();
     }
 
-    public Biblioteca(ArrayList<Book> books) {
-        this.books = books;
-    }
+//    public Biblioteca(ArrayList<Book> books) {
+//        this.books = books;
+//    }
 
     public void welcomeMessage(){
         System.out.println("Hi! Welcome to biblioteca from TWU 46!");
@@ -75,7 +75,7 @@ public class Biblioteca {
         System.out.println(String.format("%-40s%-40s%-4s", "Book Name", "Author", "Year"));
         for (Book book : books) {
             if (book.isAvailability())
-                book.print();
+                System.out.println(book.toString());
         }
     }
 
@@ -83,7 +83,7 @@ public class Biblioteca {
         System.out.println(String.format("%-30s%-10s%-20s%-2s", "Movie Name", "Year", "Director", "Rating"));
         for (Movie movie : movies) {
             if (movie.isAvailability())
-                movie.print();
+                System.out.println(movie.toString());
         }
     }
 
