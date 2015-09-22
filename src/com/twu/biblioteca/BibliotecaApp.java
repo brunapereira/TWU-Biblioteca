@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class BibliotecaApp {
 
     public static void main(String[] args) throws Exception {
-        Biblioteca biblioteca = new Biblioteca();
+        BibliotecaFactory factory = new BibliotecaFactory();
+        Biblioteca biblioteca = new Biblioteca(factory.createBooks(), factory.createMovies(), factory.createUsers(), factory.createMenu());
 
         biblioteca.welcomeMessage();
 

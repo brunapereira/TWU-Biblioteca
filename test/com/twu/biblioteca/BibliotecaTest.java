@@ -18,8 +18,8 @@ public class BibliotecaTest {
 
     @Before
     public void setUp() {
-        books.add(new Book(true, "Alice in Wonderland", "Bruna", "1992"));
-        biblioteca = new Biblioteca();
+//        books.add(new Book(true, "Alice in Wonderland", "Bruna", "1992"));
+//        biblioteca = new Biblioteca();
     }
 
     @Test

@@ -14,19 +14,16 @@ public class Biblioteca {
     private Menu menu;
     private String userLoggedIn;
 
-    public Biblioteca() {
-        this.books = new ArrayList<Book>();
-        this.movies = new ArrayList<Movie>();
-        this.users = new ArrayList<User>();
-        this.addBooks();
-        this.addMovies();
-        this.addUsers();
-        menu = new Menu();
+    public Biblioteca(ArrayList<Book> books, ArrayList<Movie> movies, ArrayList<User> users, Menu menu) {
+        this.books = books;
+        this.movies = movies;
+        this.users = users;
+        this.menu = menu;
     }
 
-//    public Biblioteca(ArrayList<Book> books) {
-//        this.books = books;
-//    }
+    public Biblioteca(ArrayList<Book> books) {
+        this.books = books;
+    }
 
     public void welcomeMessage(){
         System.out.println("Hi! Welcome to biblioteca from TWU 46!");
@@ -105,25 +102,4 @@ public class Biblioteca {
         }
         return false;
     }
-
-    private void addBooks() {
-        books.add(new Book(true, "Alice in Wonderland", "Bruna", "1992"));
-        books.add(new Book(true, "Ruby the Right Way", "Julia", "1999"));
-        books.add(new Book(true, "Java Best Parts", "Fernanda", "2003"));
-        books.add(new Book(false, "Javascript Best Parts", "Junior", "2003"));
-    }
-
-    private void addMovies() {
-        movies.add(new Movie(true, "Pokemon", "Bruna", "1999", 5));
-        movies.add(new Movie(true, "The Goodfather", "Julia", "1994", 4));
-        movies.add(new Movie(true, "The last movie", "Fernanda", "2003", 4));
-        movies.add(new Movie(false, "Movies", "Junior", "2003", 5));
-    }
-
-    private void addUsers() {
-        users.add(new User("123-4567", "Bruna", "passwordbruna", "bpereira@tw.com", "9999-9999"));
-        users.add(new User("123-1111", "Julia", "juliapass", "julia@tw.com", "9876-9999"));
-        users.add(new User("111-2345", "Fernanda", "ferpassword", "fernanda@tw.com", "9009-9009"));
-    }
-
 }
