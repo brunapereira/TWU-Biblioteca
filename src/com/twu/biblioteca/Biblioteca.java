@@ -21,10 +21,6 @@ public class Biblioteca {
         this.menu = menu;
     }
 
-    public Biblioteca(ArrayList<Book> books) {
-        this.books = books;
-    }
-
     public void welcomeMessage(){
         System.out.println("Hi! Welcome to biblioteca from TWU 46!");
         System.out.println("Here you can check-out any available book.");
