@@ -11,7 +11,13 @@ public class BibliotecaApp {
 
         biblioteca.welcomeMessage();
 
-        if (biblioteca.logIn()){
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Login:");
+        String login = scan.nextLine();
+        System.out.print("\nSenha:");
+        String password = scan.nextLine();
+
+        if (biblioteca.logIn(login, password)){
             while(true) { biblioteca.showMenu(); }
         } else {
             biblioteca.showLoginError();
