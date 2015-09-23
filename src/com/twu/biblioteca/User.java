@@ -41,9 +41,8 @@ public class User {
         return phoneNumber;
     }
 
-    @Override
-    public String toString(){
-        return format("%-20s%-20s%-20s%-10s", this.getLibraryNumber(), this.getName(), this.getEmail(), this.getPhoneNumber());
+    public void print(){
+        System.out.println(format("%-20s%-20s%-20s%-10s", this.getLibraryNumber(), this.getName(), this.getEmail(), this.getPhoneNumber()));
     }
 
 }

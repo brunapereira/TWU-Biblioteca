@@ -44,7 +44,6 @@ public class Biblioteca {
         System.out.println("Wrong user or password!");
     }
 
-
     public void findBook(String bookTo, String option) throws Exception {
         for (Book book : this.books) {
             if (book.getName().toLowerCase().equals(bookTo.toLowerCase())) {
@@ -75,7 +74,7 @@ public class Biblioteca {
         System.out.println(String.format("%-30s%-10s%-20s%-2s", "Movie Name", "Year", "Director", "Rating"));
         for (Movie movie : movies) {
             if (movie.isAvailability())
-                System.out.println(movie.toString());
+                movie.print();
         }
     }
 
@@ -83,7 +82,7 @@ public class Biblioteca {
         System.out.println(String.format("%-20s%-20s%-20s%-10s", "Library Number", "Name", "Email", "Phone"));
         for (User user : this.users) {
             if (userLoggedIn.equals(user.getLibraryNumber())) {
-                System.out.println(user.toString());
+                user.print();
             }
         }
     }

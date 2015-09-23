@@ -28,10 +28,11 @@ public class BibliotecaTest {
         books.add(Mockito.spy(new Book(true, "Alice in Wonderland", "Bruna", "1992")));
         books.add(Mockito.spy(new Book(false, "Java", "Author", "1964")));
 
-        movies.add(new Movie(true, "Pokemon", "Bruna", "1999", 5));
-        movies.add(new Movie(false, "Chaves", "El chavo", "1999", 5));
+        movies.add(Mockito.spy(new Movie(true, "Pokemon", "Bruna", "1999", 5)));
+        movies.add(Mockito.spy(new Movie(false, "Chaves", "El chavo", "1999", 5)));
 
-        users.add(new User("123-1111", "Julia", "juliapass", "julia@tw.com", "9876-9999"));
+        users.add(Mockito.spy(new User("123-1111", "Julia", "juliapass", "julia@tw.com", "9876-9999")));
+
         biblioteca = new Biblioteca(books, movies, users, menu);
     }
 
@@ -79,5 +80,24 @@ public class BibliotecaTest {
     public void listBooksIsNotListingUnavailableBooks() throws Exception {
         biblioteca.listBooks();
         verify(books.get(1), times(0)).print();
+    }
+
+    @Test
+    public void listMoviesIsListingAvailableMovies() throws Exception {
+        biblioteca.listMovies();
+        verify(movies.get(0), times(1)).print();
+    }
+
+    @Test
+    public void listMoviesIsNotListingUnavailableMovies() throws Exception {
+        biblioteca.listMovies();
+        verify(movies.get(1), times(0)).print();
+    }
+
+    @Test
+    public void showUserInformationIsPrintUsersInformation() throws Exception {
+        biblioteca.logIn("123-1111", "juliapass");
+        biblioteca.showUserInformation();
+        verify(users.get(0), times(1)).print();
     }
 }

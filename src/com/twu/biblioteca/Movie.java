@@ -26,9 +26,8 @@ public class Movie extends Product{
         return rating;
     }
 
-    @Override
-    public String toString() {
-        return format("%-30s%-10s%-20s%-2s", this.getName(), this.getDirector(), this.getYear(), this.getRating());
+    public void print() {
+        System.out.println(format("%-30s%-10s%-20s%-2s", this.getName(), this.getDirector(), this.getYear(), this.getRating()));
     }
 
 
