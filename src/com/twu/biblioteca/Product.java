@@ -50,6 +50,4 @@ abstract class Product {
         System.out.println(result);
         return result;
     }
-
-    public void print() {}
 }
