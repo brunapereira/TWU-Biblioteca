@@ -54,7 +54,7 @@ public class Menu {
                 biblioteca.listMovies();
                 break;
             case 7:
-                biblioteca.showUserInformations();
+                biblioteca.showUserInformation();
             case 8:
                 quit();
             default:

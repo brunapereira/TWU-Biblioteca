@@ -27,14 +27,14 @@ public class Biblioteca {
         System.out.println("I suggest you to check all the books and movies we have available by choosing option 1. Try it out!\n");
     }
 
-    public boolean logIn(){
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Login:");
-        String login = scan.nextLine();
-        System.out.print("\nSenha:");
-        String password = scan.nextLine();
-
-        return authenticateUser(login, password);
+    public boolean logIn(String login, String password){
+        for (User user : this.users) {
+            if (user.getLibraryNumber().equals(login) && (user.getPassword().equals(password))) {
+                userLoggedIn = user.getLibraryNumber();
+                return true;
+            }
+        }
+        return false;
     }
 
     public void showMenu() throws Exception {
@@ -80,22 +80,12 @@ public class Biblioteca {
         }
     }
 
-    public void showUserInformations(){
+    public void showUserInformation(){
         System.out.println(String.format("%-20s%-20s%-20s%-10s", "Library Number", "Name", "Email", "Phone"));
         for (User user : this.users) {
             if (userLoggedIn.equals(user.getLibraryNumber())) {
                 user.print();
             }
         }
-    }
-
-    private boolean authenticateUser(String login, String password){
-        for (User user : this.users) {
-            if (user.getLibraryNumber().equals(login) && (user.getPassword().equals(password))) {
-                userLoggedIn = user.getLibraryNumber();
-                return true;
-            }
-        }
-        return false;
     }
 }
