@@ -67,7 +67,7 @@ public class Biblioteca {
         System.out.println(String.format("%-40s%-40s%-4s", "Book Name", "Author", "Year"));
         for (Book book : books) {
             if (book.isAvailability())
-                System.out.println(book.toString());
+                book.print();
         }
     }
 

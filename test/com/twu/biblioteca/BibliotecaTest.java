@@ -68,4 +68,16 @@ public class BibliotecaTest {
         biblioteca.findMovie("Chaves", "giveBack");
         assertEquals(movies.get(1).isAvailability(), true);
     }
+
+    @Test
+    public void listBooksIsListingAvailableBooks() throws Exception {
+        biblioteca.listBooks();
+        verify(books.get(0), times(1)).print();
+    }
+
+    @Test
+    public void listBooksIsNotListingUnavailableBooks() throws Exception {
+        biblioteca.listBooks();
+        verify(books.get(1), times(0)).print();
+    }
 }
