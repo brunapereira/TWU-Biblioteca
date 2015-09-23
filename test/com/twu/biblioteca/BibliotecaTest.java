@@ -2,15 +2,18 @@ package com.twu.biblioteca;
 
 import org.junit.Before;
 import org.junit.Test;
-
+import org.mockito.Mockito;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 
 /**
  * Created by bpereira on 9/17/15.
  */
+
 public class BibliotecaTest {
 
     Biblioteca biblioteca;
@@ -19,10 +22,11 @@ public class BibliotecaTest {
     ArrayList<User> users = new ArrayList<User>();
     Menu menu = new Menu();
 
+
     @Before
     public void setUp() {
-        books.add(new Book(true, "Alice in Wonderland", "Bruna", "1992"));
-        books.add(new Book(false, "Java", "Author", "1964"));
+        books.add(Mockito.spy(new Book(true, "Alice in Wonderland", "Bruna", "1992")));
+        books.add(Mockito.spy(new Book(false, "Java", "Author", "1964")));
 
         movies.add(new Movie(true, "Pokemon", "Bruna", "1999", 5));
         movies.add(new Movie(false, "Chaves", "El chavo", "1999", 5));
@@ -64,6 +68,4 @@ public class BibliotecaTest {
         biblioteca.findMovie("Chaves", "giveBack");
         assertEquals(movies.get(1).isAvailability(), true);
     }
-
-
 }
