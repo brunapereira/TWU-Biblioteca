@@ -1,7 +1,6 @@
 package com.twu.biblioteca;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * Created by bpereira on 9/17/15.
@@ -84,7 +83,7 @@ public class Biblioteca {
         System.out.println(String.format("%-20s%-20s%-20s%-10s", "Library Number", "Name", "Email", "Phone"));
         for (User user : this.users) {
             if (userLoggedIn.equals(user.getLibraryNumber())) {
-                user.print();
+                System.out.println(user.toString());
             }
         }
     }
